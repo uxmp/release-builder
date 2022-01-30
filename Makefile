@@ -24,7 +24,7 @@ build:clean
 	mkdir -p ${BUILD_CORE} ${BUILD_UI}
 
 	git clone git@github.com:uxmp/core.git ${DIST_CORE} && cd ${DIST_CORE} && git checkout ${CORE_VERSION} && composer install --no-dev -a
-	cd ${DIST_CORE} && cp -r .env.dist LICENSE README.md bin cli-config.php src vendor ../../${BUILD_CORE}
+	cd ${DIST_CORE} && cp -r .env.dist LICENSE README.md bin cli-config.php src vendor resource ../../${BUILD_CORE}
 
 	git clone git@github.com:uxmp/ui.git ${DIST_UI} && cd ${DIST_UI} && git checkout ${UI_VERSION} && npm install && npm run build
 	cp -r ${DIST_UI}/dist/* ${BUILD_UI}

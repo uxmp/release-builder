@@ -25,7 +25,7 @@ build:clean
 
 	git clone git@github.com:uxmp/core.git ${DIST_CORE} && cd ${DIST_CORE} && git checkout ${CORE_VERSION} && composer install --no-dev -a
 	sed -i "s/UXMP_VERSION=dev/UXMP_VERSION=${TARGET_VERSION}/" ${DIST_CORE}/.env.dist
-	cd ${DIST_CORE} && cp -r .env.dist LICENSE README.md bin cli-config.php src vendor resource ../../${BUILD_CORE}
+	cd ${DIST_CORE} && cp -r .env.dist LICENSE README.md bin src vendor resource ../../${BUILD_CORE}
 
 	git clone git@github.com:uxmp/ui.git ${DIST_UI} && cd ${DIST_UI} && git checkout ${UI_VERSION}
 	sed -i "s/VITE_VERSION=dev/VITE_VERSION=${TARGET_VERSION}/" ${DIST_UI}/.env*
